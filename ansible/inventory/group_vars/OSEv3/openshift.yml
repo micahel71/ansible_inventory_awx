@@ -1,3 +1,4 @@
 ---
 openshift_release: "3.9"
 openshift_disable_check: "memory_availability"
+etcd_image: "registry.fedoraproject.org/latest/etcd"

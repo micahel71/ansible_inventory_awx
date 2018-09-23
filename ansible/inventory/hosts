@@ -28,6 +28,6 @@ master.office.lan
 # host group for nodes, includes region info
 [nodes]
 master.office.lan
-node.office.lan openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
+worker.office.lan openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
 infra.office.lan openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
 

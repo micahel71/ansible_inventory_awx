@@ -1,13 +1,21 @@
 ---
-ansible_ssh_user: "michi"
 ansible_become: true
+ansible_ssh_user: "michi"
+#
+#
 openshift_deployment_type: "origin"
+openshift_disable_check: "memory_availability,docker_image_availability"
+#
+openshift_master_htpasswd_users:
+  admin: "$apr1$PTaOT6Db$7gGsXYTLPwoKDvWfhDEr2/"
 openshift_master_identity_providers:
 - name: "htpasswd_auth"
   login: true
   challenge: true
   kind: "HTPasswdPasswordIdentityProvider"
   filename: "/etc/origin/master/htpasswd"
+#
 openshift_release: "3.9"
-openshift_disable_check: "memory_availability,docker_image_availability"
-
+#
+#
+os_firewall_use_firewalld: true

@@ -1,4 +1,13 @@
 ---
+ansible_ssh_user: "michi"
+ansible_become: true
+openshift_deployment_type: "origin"
+openshift_master_identity_providers:
+- name: "htpasswd_auth"
+  login: true
+  challenge: true
+  kind: "HTPasswdPasswordIdentityProvider"
+  filename: "/etc/origin/master/htpasswd"
 openshift_release: "3.9"
 openshift_disable_check: "memory_availability,docker_image_availability"
-# etcd_image: "registry.fedoraproject.org/latest/etcd"
+

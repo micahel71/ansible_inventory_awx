@@ -1,0 +1,10 @@
+---
+- hosts: OSEv3
+  name: ensure docker is running
+  tasks:
+  - name: start docker service
+    service:
+      enabled: yes
+      name: docker
+      state: started
+

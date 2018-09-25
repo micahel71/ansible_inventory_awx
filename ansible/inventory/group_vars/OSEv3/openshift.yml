@@ -22,3 +22,7 @@ openshift_release: "3.9"
 #
 #
 os_firewall_use_firewalld: true
+#
+#
+template_service_broker_install: false
+

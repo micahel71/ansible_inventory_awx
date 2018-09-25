@@ -4,10 +4,7 @@ ansible_ssh_user: "michi"
 #
 #
 openshift_deployment_type: "origin"
-openshift_disable_check: 
-  memory_availability
-  docker_image_availability
-  disk_availability
+openshift_disable_check: "memory_availability,docker_image_availability,disk_availability"
 #
 openshift_enable_unsupported_configurations: true
 #

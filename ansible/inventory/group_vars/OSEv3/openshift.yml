@@ -6,6 +6,8 @@ ansible_ssh_user: "michi"
 openshift_deployment_type: "origin"
 openshift_disable_check: "memory_availability,docker_image_availability"
 #
+openshift_enable_unsupported_configurations: false
+#
 openshift_master_htpasswd_users:
   admin: "$apr1$PTaOT6Db$7gGsXYTLPwoKDvWfhDEr2/"
 openshift_master_identity_providers:

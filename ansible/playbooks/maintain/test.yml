@@ -1,0 +1,29 @@
+---
+- name: PLAYIT
+  hosts: localhost
+  vars:
+    tower_awx_cli: awx-cli
+    workflow_name: uninstall_cluster_39
+  tasks:
+  - name: create temporary file
+    tempfile:
+      state: file
+      suffix: temp
+    register: awx_temp_file
+  - name: generate workflow_job list
+    shell: |
+      {{ tower_awx_cli }} workflow_job list --format=json --all-pages > {{ awx_temp_file.path }}
+    args:
+      executable: /bin/bash
+    register: awx_workflow_job_list
+  - name: "fetching the id of last run for workflow \"{{ workflow_name }}\""
+    set_fact:
+      workflow_job_id: "{{ lookup('file', '{{ awx_temp_file.path }}') | from_json | json_query(\"results[?name=='\" + workflow_name + \"'].id\") | last }}"
+  - name: "fetching the status of last run for workflow \"{{ workflow_name }}\""
+    set_fact:
+      workflow_job_status: "{{ lookup('file', '{{ awx_temp_file.path }}') | from_json | json_query(\"results[?name=='\" + workflow_name + \"'].status\") | last }}"
+      
+  - file:
+      path: "{{ awx_temp_file.path }}"
+      state: absent
+

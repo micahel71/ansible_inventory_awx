@@ -1,0 +1,8 @@
+---
+- hosts: masters
+  run_once: true
+  become: true
+  tasks:
+  - name: make admin to admin
+    shell: oc adm policy add-cluster-role-to-user admin admin
+

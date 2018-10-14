@@ -11,6 +11,8 @@ master.office.lan
 
 [nodes]
 master.office.lan
-worker.office.lan openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
-infra.office.lan openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+worker.office.lan
+#worker.office.lan openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
+infra.office.lan
+#infra.office.lan openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
 

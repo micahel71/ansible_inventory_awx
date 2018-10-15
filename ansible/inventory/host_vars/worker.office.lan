@@ -1,6 +1,6 @@
 ---
 openshift_node_group_name: "node-config-compute"
 openshift_node_labels:
-- region: "primary"
-- zone: "east"
+  region: "primary"
+  zone: "east"
 

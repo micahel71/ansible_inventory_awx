@@ -18,7 +18,7 @@ openshift_master_identity_providers:
   kind: "HTPasswdPasswordIdentityProvider"
   filename: "/etc/origin/master/htpasswd"
 #
-openshift_release: "3.9"
+openshift_release: "3.10"
 #
 #
 os_firewall_use_firewalld: true

@@ -7,4 +7,7 @@
       enabled: yes
       name: docker
       state: started
+  - name: remove all system container
+    shell: |
+      atomic images delete -af
 

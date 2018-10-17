@@ -1,13 +1,10 @@
 ---
 - hosts: OSEv3
-  name: ensure docker is running
+  name: post uninstall
   tasks:
-  - name: start docker service
+  - name: ensure docker service is running
     service:
       enabled: yes
       name: docker
       state: started
-  - name: remove all system container
-    shell: |
-      atomic images delete -af
 
